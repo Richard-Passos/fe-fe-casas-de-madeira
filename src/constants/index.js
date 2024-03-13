@@ -1,0 +1,9 @@
+export { default as contact } from './contact';
+export { default as pages } from './pages';
+export { default as personalInfo } from './personalInfo';
+export { default as process } from './process';
+export { default as projects } from './projects';
+export { default as stats } from './stats';
+export { default as values } from './values';
+export { default as whyUs } from './whyUs';
+export { default as workHours } from './workHours';

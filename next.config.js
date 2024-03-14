@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'fecasasdemadeira.com.br',
+        hostname: 'api.fecasasdemadeira.com.br',
         pathname: '**',
       },
     ],

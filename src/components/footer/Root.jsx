@@ -10,9 +10,9 @@ const Footer = async ({ className, ...props }) => {
       await businessInfoApi.get('?populate=socials&populate=openingHours')
     ).data,
     contactInfo = (await businessInfoApi.getContact()).data,
-    data = (await footerApi.get('?populate=*')).data;
+    data = (await footerApi.get('?populate=*')).data || {};
 
-  const [backTopAct] = data.actions || [{}];
+  const [backTopAct = {}] = data.actions;
 
   return (
     <footer
@@ -64,7 +64,7 @@ const Footer = async ({ className, ...props }) => {
 
         <section className='sm:justify-self-center'>
           <Text.Subtitle className='mb-sm text-2xl'>
-            {data.items?.[0].title}
+            {data.items?.[0]?.title}
           </Text.Subtitle>
 
           <ul className='mb-8 flex flex-col items-start gap-4 sm:justify-self-end'>
@@ -102,7 +102,7 @@ const Footer = async ({ className, ...props }) => {
 
         <section className='sm:justify-self-center'>
           <Text.Subtitle className='mb-sm text-2xl'>
-            {data.items?.[1].title}
+            {data.items?.[1]?.title}
           </Text.Subtitle>
 
           <ul className='mb-8 flex flex-col items-start gap-4 sm:justify-self-end'>

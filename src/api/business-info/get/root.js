@@ -18,10 +18,10 @@ const businessInfoApiGet = async (pathname = '', opts = {}) => {
   return _businessInfoApiGetNormalizeData(data);
 };
 
-const _businessInfoApiGetNormalizeData = (data) => {
-  const normalizedData = apiNormData(data);
+const _businessInfoApiGetNormalizeData = (data  ) => {
+  const normalizedData = apiNormData(data) || {};
 
-  const logo = apiNormImg(normalizedData.data.logo?.data);
+  const logo = apiNormImg(normalizedData.data?.logo?.data);
 
   return { ...normalizedData, data: { ...normalizedData.data, logo } };
 };

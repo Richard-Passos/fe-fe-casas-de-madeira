@@ -14,7 +14,7 @@ const HeaderNav = ({ items, ...props }) => {
 
   return (
     <NavigationMenu {...props}>
-      {items.map(({ href, label }, i) => {
+      {items?.map(({ href, label }, i) => {
         const isActive =
           isHover === i || (pathname === href && isHover === DEFAULT_IS_HOVER);
 

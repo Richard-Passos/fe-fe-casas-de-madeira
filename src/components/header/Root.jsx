@@ -20,7 +20,7 @@ const Header = async ({ className, ...props }) => {
     ?.map(({ name }) => HEADER_SECTIONS_PT[name.toLowerCase()])
     .filter((section) => section?.label);
 
-  navItems.push(HEADER_SECTIONS_PT['contact']);
+  navItems?.push(HEADER_SECTIONS_PT['contact']);
 
   return (
     <header
@@ -33,8 +33,8 @@ const Header = async ({ className, ...props }) => {
       <Logo className='transition-none' />
 
       <Nav
-        items={navItems}
         className='-mr-4 max-sm:hidden'
+        items={navItems}
       />
 
       <Menu />

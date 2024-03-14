@@ -14,10 +14,10 @@ const HomeView = ({ data = {} }) => {
         return (
           Section && (
             <Section
-              theme={i === 0 ? 'dark' : 'light'}
-              key={data.name}
-              id={data.name.toLowerCase()}
               data={data}
+              id={data.name.toLowerCase()}
+              key={data.name}
+              theme={i === 0 ? 'dark' : 'light'}
             />
           )
         );

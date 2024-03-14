@@ -19,7 +19,7 @@ const HeaderMenuNav = ({ className, items, ...props }) => {
       className={cn('w-9/10 max-w-none flex-col', className)}
       {...props}
     >
-      {items.map(({ href, label }, i) => {
+      {items?.map(({ href, label }, i) => {
         const isActive =
           isHover === i || (pathname === href && isHover === DEFAULT_IS_HOVER);
 

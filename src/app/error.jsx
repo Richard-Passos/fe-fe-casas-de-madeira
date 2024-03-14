@@ -9,8 +9,7 @@ const ErrorPage = ({...props}) => {
 
 useEffect(() => {
   const handleSetData = async () => {
-    const res = (await pagesApi.get()).data
-    console.log('-  res   -', res)
+    const res = (await pagesApi.getOne('error', '&populate=sections')).data
 
     setData(res)
   }

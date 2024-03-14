@@ -1,17 +1,13 @@
 import { Inter } from 'next/font/google';
 
-import { businessInfoApi, pagesApi } from '@/api';
+import { businessInfoApi } from '@/api';
 import { Footer, Header } from '@/components';
-import { ErrorBoundary } from '@/components/ui';
 import '@/styles/globals.css';
 import { cn } from '@/utils';
 
 const font = Inter({ subsets: ['latin'], variable: '--font-app' });
 
 const Layout = async ({ children }) => {
-  const errorData = (await pagesApi.getOne('error', '&populate=sections')).data
-    console.log('-  errorData   -', errorData)
-
   return (
     <html
       className='scroll-smooth'
@@ -26,9 +22,7 @@ const Layout = async ({ children }) => {
       >
         <Header />
 
-        <ErrorBoundary  >
         {children}
-        </ErrorBoundary>
 
         <Footer />
       </body>

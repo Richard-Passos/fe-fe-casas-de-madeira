@@ -1,9 +1,8 @@
 import Sections from './sections';
 
+const ErrorView = ({ data = {}, error, reset }) => {
+  const { sections = [] } = data;
 
-const ErrorView = ({  data = {}, error, reset  }) => {
-  const {sections = []} = data
-  
   return (
     <main className='flex w-full max-w-bounds flex-col items-center'>
       {sections?.map((data) => {

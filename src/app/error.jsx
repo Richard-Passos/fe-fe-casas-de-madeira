@@ -1,23 +1,29 @@
-'use client'
+'use client';
+
+import { useEffect, useState } from 'react';
 
 import { pagesApi } from '@/api';
 import { ErrorView } from '@/views';
-import { useEffect, useState } from 'react';
 
-const ErrorPage = ({...props}) => {
-  const [data, setData] = useState({})
+const ErrorPage = ({ ...props }) => {
+  const [data, setData] = useState({});
 
-useEffect(() => {
-  const handleSetData = async () => {
-    const res = (await pagesApi.getOne('error', '&populate=sections')).data
+  useEffect(() => {
+    const handleSetData = async () => {
+      const res = (await pagesApi.getOne('error', '&populate=sections')).data;
 
-    setData(res)
-  }
+      setData(res);
+    };
 
-  handleSetData()
-})
+    handleSetData();
+  });
 
-  return <ErrorView  data={data} {...props}/>
-}
+  return (
+    <ErrorView
+      data={data}
+      {...props}
+    />
+  );
+};
 
 export default ErrorPage;

@@ -1,22 +1,23 @@
-'use client'
+'use client';
 
-import { cn } from '@/utils';
-
-import { Button, Link, Text } from '@/components/ui';
 import { useEffect } from 'react';
 
+import { Button, Link, Text } from '@/components/ui';
+import { cn } from '@/utils';
 
-const ErrorHeroSection = ({ error, className,data={}, reset,  ...props }) => {
-  const [tryAgainAct = {}, homeAct = {}] = (data?.actions ? data.actions : []);
+const ErrorHeroSection = ({ error, className, data = {}, reset, ...props }) => {
+  const [tryAgainAct = {}, homeAct = {}] = data?.actions ? data.actions : [];
 
   useEffect(() => {
     console.log(error);
   }, [error]);
 
-
   return (
     <section
-      className={cn('w-9/10 max-w-screen-xl flex flex-col items-center justify-center min-h-[calc(100svh-var(--header-h))] pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))]', className)}
+      className={cn(
+        'flex min-h-[calc(100svh-var(--header-h))] w-9/10 max-w-screen-xl flex-col items-center justify-center pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))]',
+        className,
+      )}
       {...props}
     >
       <Text.Title
@@ -47,7 +48,7 @@ const ErrorHeroSection = ({ error, className,data={}, reset,  ...props }) => {
       </div>
 
       <span className='absolute top-0 h-px w-[calc(var(--w)*.95)] bg-border [--w:100vw] 2xl:[--w:--max-w]' />
-      </section>
+    </section>
   );
 };
 

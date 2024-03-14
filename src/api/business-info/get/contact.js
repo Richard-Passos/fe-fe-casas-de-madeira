@@ -13,7 +13,8 @@ const businessInfoApiGetContact = async (pathname = '', opts = {}) => {
     },
   );
 
-  const { email, phone = '' } = apiNormData((await res.json()).data)?.data || {};
+  const { email, phone = '' } =
+    apiNormData((await res.json()).data)?.data || {};
 
   const data = [
     {

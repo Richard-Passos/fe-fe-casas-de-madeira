@@ -5,6 +5,4 @@ const ErrorViewSections = {
 };
 
 export default ErrorViewSections;
-export {
-  ErrorViewHeroSection,
-};
+export { ErrorViewHeroSection };

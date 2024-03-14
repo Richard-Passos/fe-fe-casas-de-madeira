@@ -1,3 +1,3 @@
-import ErrorBoundary from './Root'
+import ErrorBoundary from './Root';
 
-export default ErrorBoundary
+export default ErrorBoundary;

@@ -14,7 +14,7 @@ const HomeViewWorkSection = async ({
   const projects = (await projectsApi.getSelecteds('&populate=thumbnail')).data,
     businessInfo = (await businessInfoApi.get()).data;
 
-  const [seeMoreAct = {}, contactAct = {}] = data?.actions
+  const [seeMoreAct = {}, contactAct = {}] = data?.actions;
 
   const lastItem = {
     ...data.items?.at(-1),

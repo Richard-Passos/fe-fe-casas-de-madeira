@@ -4,7 +4,7 @@ import Sections from './sections';
 
 const HomeView = ({ data = {} }) => {
   const { sections } = data;
-
+  
   return (
     <main className='dark-layout flex w-full max-w-bounds flex-col items-center'>
       {sections?.map((data, i) => {

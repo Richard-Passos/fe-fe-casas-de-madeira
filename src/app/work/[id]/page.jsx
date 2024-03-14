@@ -13,6 +13,9 @@ const generateMetadata = async ({ params }) => {
 
   const data = (await projectsApi.getOne(id)).data;
 
+  throw new Error('--------------- Cleber error ------------------')
+
+
   return {
     title: data.title,
     description: data.description,

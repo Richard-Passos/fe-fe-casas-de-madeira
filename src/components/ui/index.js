@@ -14,6 +14,7 @@ export { default as Command } from './command';
 export { default as ContextMenu } from './context-menu';
 export { default as Dialog } from './dialog';
 export { default as DropdownMenu } from './dropdown-menu';
+export { default as ErrorBoundary } from './error-boundary';
 export { default as Form } from './form';
 export { default as HoverCard } from './hover-card';
 export { default as Icon } from './icon';

@@ -10,7 +10,7 @@ const ProjectView = async ({ promises, className, ...props }) => {
 
   return (
     <main
-      className={cn(
+       className={cn(
         'flex w-full max-w-bounds flex-col items-center',
         className,
       )}

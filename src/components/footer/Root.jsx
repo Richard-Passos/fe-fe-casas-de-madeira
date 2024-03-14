@@ -124,7 +124,7 @@ const Footer = async ({ className, ...props }) => {
 
       <div className='flex w-9/10 gap-2 border-t p-sm max-sm:flex-col max-sm:items-center sm:justify-between'>
         <Text.Small>
-          &copy; 2024 {businessInfo.name} — Casas de madeira
+          &copy; 2024 {businessInfo.name}
         </Text.Small>
 
         <Text.Small>

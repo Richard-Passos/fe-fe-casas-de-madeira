@@ -17,7 +17,7 @@ const TextTitle = ({ asChild, variants, className, ...props }, ref) => {
 
 const textTitleSizes = {
   md: 'text-xl font-semibold',
-  lg: 'text-[12vw]/[1] font-semibold uppercase sm:text-[min(8vw,theme(fontSize.8xl))]/[1]',
+  lg: 'text-[13vw]/[1] font-semibold uppercase sm:text-[min(8vw,theme(fontSize.8xl))]/[1]',
   xl: 'text-[16vw]/[1] font-semibold uppercase sm:text-[min(14vw,12rem)]/[1]',
 };
 

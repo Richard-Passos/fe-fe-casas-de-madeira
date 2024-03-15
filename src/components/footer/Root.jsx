@@ -44,7 +44,7 @@ const Footer = async ({ className, ...props }) => {
         <div className='flex flex-col items-start'>
           <Logo className='mb-2' />
 
-          <Text className='mb-sm max-w-80 text-sm text-muted-content'>
+          <Text className='mb-sm max-w-80 text-sm text-muted-content first-letter:uppercase'>
             {businessInfo.summary}
           </Text>
 
@@ -63,7 +63,7 @@ const Footer = async ({ className, ...props }) => {
         </div>
 
         <section className='sm:justify-self-center'>
-          <Text.Subtitle className='mb-sm text-2xl'>
+          <Text.Subtitle className='mb-sm text-2xl first-letter:uppercase lowercase'>
             {data.items?.[0]?.title}
           </Text.Subtitle>
 
@@ -90,7 +90,7 @@ const Footer = async ({ className, ...props }) => {
           <nav className='grid gap-4'>
             {businessInfo.socials?.map((data) => (
               <Link
-                className='w-fit text-sm'
+                className='w-fit text-sm inline-block first-letter:uppercase lowercase'
                 href={data.href}
                 key={data.href}
               >
@@ -101,7 +101,7 @@ const Footer = async ({ className, ...props }) => {
         </section>
 
         <section className='sm:justify-self-center'>
-          <Text.Subtitle className='mb-sm text-2xl'>
+          <Text.Subtitle className='mb-sm text-2xl first-letter:uppercase lowercase'>
             {data.items?.[1]?.title}
           </Text.Subtitle>
 
@@ -115,7 +115,7 @@ const Footer = async ({ className, ...props }) => {
                   <h4>{data.title}:</h4>
                 </Text.Subtitle>
 
-                <Text className='text-sm font-medium'>{data.description}</Text>
+                <Text className='text-sm font-medium first-letter:uppercase'>{data.description}</Text>
               </li>
             ))}
           </ul>

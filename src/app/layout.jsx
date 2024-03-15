@@ -2,12 +2,13 @@ import { Inter } from 'next/font/google';
 
 import { businessInfoApi } from '@/api';
 import { Footer, Header } from '@/components';
+import { ErrorBoundary } from '@/components/ui';
 import '@/styles/globals.css';
 import { cn } from '@/utils';
 
 const font = Inter({ subsets: ['latin'], variable: '--font-app' });
 
-const Layout = async ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <html
       className='scroll-smooth'
@@ -22,7 +23,12 @@ const Layout = async ({ children }) => {
       >
         <Header />
 
-        {children}
+<ErrorBoundary.Provider>
+
+<ErrorBoundary>
+          {children}
+</ErrorBoundary>
+</ErrorBoundary.Provider>
 
         <Footer />
       </body>

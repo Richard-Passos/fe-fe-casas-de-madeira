@@ -16,7 +16,7 @@ const HeaderMenuLink = ({ isActive, className, children, ...props }) => {
       )}
       {...props}
     >
-      {children}
+      <span className='first-letter:uppercase lowercase'>{children}</span>
 
       {isActive && (
         <motion.span

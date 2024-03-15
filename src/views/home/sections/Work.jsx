@@ -30,13 +30,20 @@ const HomeViewWorkSection = async ({
       )}
       {...props}
     >
-      <Text.Title
-        className='relative mb-lg mr-auto h-fit max-w-screen-sm'
-        variants={{ size: 'lg' }}
-      >
-        {data.title}
-        <span className='absolute bottom-0 left-0 h-[.075em] w-1/4 translate-y-[400%] rounded-full bg-primary' />
-      </Text.Title>
+      <header className='mb-lg w-full flex gap-md max-sm:flex-col items-center sm:items-end justify-between'>
+        <Text.Title
+          className='relative max-sm:text-center whitespace-pre-line'
+          variants={{ size: 'lg' }}
+        >
+          {data.title?.split(' ').join(`\n`)}
+
+          <span className='absolute bottom-0 left-1/2 sm:left-0 max-sm:-translate-x-1/2 h-[.075em] w-1/4 translate-y-xs rounded-full bg-primary' />
+        </Text.Title>
+
+          <Text className='sm:max-w-md text-muted-content max-sm:text-center first-letter:uppercase'>{data.description}</Text>
+
+
+      </header>
 
       <Projects>
         {projects?.slice(0, projects.length - 1).map(({ id, data }, i, arr) => (
@@ -63,7 +70,7 @@ const HomeViewWorkSection = async ({
 
         <Projects.Item className='md:order-1 md:mt-lg'>
           <Projects.Link
-            className='bg-main text-main'
+            className='bg-main text-main focus-visible:outline-content'
             href={`https://wa.me/${businessInfo.phone.replace(/\D/g, '')}`}
           >
             <Projects.Image

@@ -12,7 +12,7 @@ const pagesApiGetOne = async (name = '', pathname = '', opts = {}) => {
       },
     },
   );
-
+  
   if (!res.ok) throw new Error('Failed to fetch data');
 
   const data = (await res.json()).data?.[0];

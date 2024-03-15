@@ -12,16 +12,19 @@ const HomeViewWhyUsSection = ({ theme, className, data = {}, ...props }) => {
       )}
       {...props}
     >
-      <header className='mb-lg grid gap-md sm:grid-cols-2'>
+      <header className='mb-lg w-full flex gap-md max-sm:flex-col items-center sm:items-end justify-between'>
         <Text.Title
-          className='relative h-fit'
+          className='relative max-sm:text-center whitespace-pre-line'
           variants={{ size: 'lg' }}
         >
-          {data.title}
-          <span className='absolute bottom-0 left-0 h-[.075em] w-1/4 translate-y-[400%] rounded-full bg-primary' />
+          {data.title?.split(' ').join(`\n`)}
+
+          <span className='absolute bottom-0 left-1/2 sm:left-0 max-sm:-translate-x-1/2 h-[.075em] w-1/4 translate-y-xs rounded-full bg-primary' />
         </Text.Title>
 
-        <Text className='self-end text-muted-content'>{data.description}</Text>
+          <Text className='sm:max-w-md text-muted-content max-sm:text-center first-letter:uppercase'>{data.description}</Text>
+
+
       </header>
 
       <WhyUs>

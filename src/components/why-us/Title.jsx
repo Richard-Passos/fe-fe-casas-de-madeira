@@ -5,7 +5,7 @@ import { TextSubtitle } from '../ui/text';
 const WhyUsTitle = ({ className, ...props }) => {
   return (
     <TextSubtitle
-      className={cn('text-2xl uppercase', className)}
+      className={cn('text-2xl first-letter:uppercase lowercase max-sm:text-center', className)}
       {...props}
     />
   );

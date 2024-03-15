@@ -1,7 +1,6 @@
 import { Cross2Icon } from '@radix-ui/react-icons';
 
-import { pagesApi } from '@/api';
-import { contact, personalInfo } from '@/constants';
+import { businessInfoApi, pagesApi } from '@/api';
 import { cn } from '@/utils';
 
 import { Button, Link } from '../../ui';
@@ -12,7 +11,11 @@ import Nav from './Nav';
 
 const HeaderMenuContent = async ({ className, ...props }) => {
   const { sections } = (await pagesApi.getOne('home', '&populate=sections'))
-    .data;
+    .data,
+     businessInfo = (
+      await businessInfoApi.get('?populate=socials&populate=openingHours')
+    ).data,
+    contactInfo = (await businessInfoApi.getContact()).data;
 
   const navItems = sections
     ?.map(({ name }) => HEADER_SECTIONS_PT[name.toLowerCase()])
@@ -46,30 +49,30 @@ const HeaderMenuContent = async ({ className, ...props }) => {
 
       <section className='!mt-auto w-full px-sm pb-sm'>
         <ul className='mb-8 flex flex-col items-start gap-4'>
-          {contact.map(({ title, href, data }) => (
-            <li key={href}>
+          {contactInfo?.map((data) => (
+            <li key={data.href}>
               <TextSubtitle className='mb-1 text-xs uppercase text-muted-content'>
-                {title}
+                {data.title}
               </TextSubtitle>
 
               <Link
-                className='text-sm'
-                href={href}
+                className='text-sm first-letter:uppercase lowercase'
+                href={data.href}
               >
-                {data}
+                {data.description}
               </Link>
             </li>
           ))}
         </ul>
 
         <nav className='grid grid-cols-3 place-items-center gap-4'>
-          {personalInfo.socials.map((social) => (
+          {businessInfo.socials?.map((data) => (
             <Link
               className='text-sm'
-              href={social.href}
-              key={social.href}
+              href={data.href}
+              key={data.href}
             >
-              {social.name}
+              {data.label}
             </Link>
           ))}
         </nav>

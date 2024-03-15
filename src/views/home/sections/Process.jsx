@@ -1,5 +1,5 @@
 import { Bg, ScrollAnimation } from '@/components';
-import { Button, Link, Text } from '@/components/ui';
+import { Text } from '@/components/ui';
 import { cn } from '@/utils';
 
 const HomeViewProcessSection = ({ theme, className, data = {}, ...props }) => {
@@ -33,16 +33,19 @@ const HomeViewProcessSection = ({ theme, className, data = {}, ...props }) => {
       )}
       {...props}
     >
-      <header className='col-span-full mb-lg grid gap-md sm:grid-cols-2'>
+      <header className='mb-lg w-full flex gap-md max-sm:flex-col items-center sm:items-end justify-between'>
         <Text.Title
-          className='relative h-fit'
+          className='relative max-sm:text-center whitespace-pre-line'
           variants={{ size: 'lg' }}
         >
-          {data.title}
-          <span className='absolute bottom-0 left-0 h-[.075em] w-1/4 translate-y-[400%] rounded-full bg-primary' />
+          {data.title?.split(' ').join(`\n`)}
+
+          <span className='absolute bottom-0 left-1/2 sm:left-0 max-sm:-translate-x-1/2 h-[.075em] w-1/4 translate-y-xs rounded-full bg-primary' />
         </Text.Title>
 
-        <Text className='self-end text-muted-content'>{data.description}</Text>
+          <Text className='sm:max-w-md text-muted-content max-sm:text-center first-letter:uppercase'>{data.description}</Text>
+
+
       </header>
 
       <ul className='relative grid w-full max-w-md gap-lg'>
@@ -63,25 +66,15 @@ const HomeViewProcessSection = ({ theme, className, data = {}, ...props }) => {
 
             <ScrollAnimation config={animationConfig.opacity}>
               <div className='flex flex-col items-start justify-center'>
-                <Text.Subtitle className='mb-1 text-xl'>
+                <Text.Subtitle className='mb-1 text-xl first-letter:uppercase lowercase'>
                   {data.title}
                 </Text.Subtitle>
 
-                <Text className='text-muted-content'>{data.description}</Text>
-
-                {data.action && (
-                  <Button
-                    asChild
-                    className='mt-6 hover:no-underline'
-                    variants={{ size: 'sm' }}
-                  >
-                    <Link {...data.action} />
-                  </Button>
-                )}
+                <Text className='text-muted-content first-letter:uppercase'>{data.description}</Text>
               </div>
             </ScrollAnimation>
 
-            <span className='absolute left-0 -z-10 h-1/2 w-28 bg-main group-first:top-0 group-last-of-type:bottom-0' />
+            <span className='absolute left-0 -z-10 h-1/2 w-28 bg-main group-first-of-type:top-0 group-last-of-type:bottom-0' />
           </li>
         ))}
 

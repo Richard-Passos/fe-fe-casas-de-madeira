@@ -1,17 +1,8 @@
-'use client';
-
-import { useEffect } from 'react';
-
 import { Button, Link, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const ErrorHeroSection = ({ data = {}, error, className,  reset, ...props }) => {
-  const [backHomeAct = {}, tryAgainAct = {}, ] = data?.actions ? data.actions : [];
-
-
-  useEffect(() => {
-    console.log(error);
-  }, [error]);
+const NotFoundHeroSection = ({   data = {},className, ...props }) => {
+  const [backHomeAct = {}] = data?.actions ? data.actions : [];
 
   return (
     <section
@@ -37,28 +28,18 @@ const ErrorHeroSection = ({ data = {}, error, className,  reset, ...props }) => 
         {data.description}
       </Text>
 
-      <div className='flex w-fit max-w-9/10 flex-wrap items-center justify-center gap-sm'>
-        <Button
-          asChild
-          variants={{ color: 'main' }}
+      <Button asChild>
+        <Link
+          href='/'
+          className='hover:no-underline'
         >
-          <Link
-            href='/'
-            className='hover:no-underline'
-          >
-            {backHomeAct.label}
-          </Link>
-        </Button>
-        
-        <Button onClick={() => {
-          console.log('reset')
-          reset()
-        }}>{tryAgainAct.label}</Button>
-      </div>
+          {backHomeAct.label}
+        </Link>
+      </Button>
 
       <span className='absolute top-0 h-px w-[calc(var(--w)*.95)] bg-border [--w:100vw] 2xl:[--w:--max-w]' />
     </section>
   );
 };
 
-export default ErrorHeroSection;
+export default NotFoundHeroSection;

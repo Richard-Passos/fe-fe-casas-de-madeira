@@ -33,19 +33,19 @@ const HomeViewProcessSection = ({ theme, className, data = {}, ...props }) => {
       )}
       {...props}
     >
-      <header className='mb-lg w-full flex gap-md max-sm:flex-col items-center sm:items-end justify-between'>
+      <header className='mb-lg flex w-full items-center justify-between gap-md max-sm:flex-col sm:items-end'>
         <Text.Title
-          className='relative max-sm:text-center whitespace-pre-line'
+          className='relative whitespace-pre-line max-sm:text-center'
           variants={{ size: 'lg' }}
         >
           {data.title?.split(' ').join(`\n`)}
 
-          <span className='absolute bottom-0 left-1/2 sm:left-0 max-sm:-translate-x-1/2 h-[.075em] w-1/4 translate-y-xs rounded-full bg-primary' />
+          <span className='absolute bottom-0 left-1/2 h-[.075em] w-1/4 translate-y-xs rounded-full bg-primary max-sm:-translate-x-1/2 sm:left-0' />
         </Text.Title>
 
-          <Text className='sm:max-w-md text-muted-content max-sm:text-center first-letter:uppercase'>{data.description}</Text>
-
-
+        <Text className='text-muted-content first-letter:uppercase max-sm:text-center sm:max-w-md'>
+          {data.description}
+        </Text>
       </header>
 
       <ul className='relative grid w-full max-w-md gap-lg'>
@@ -66,11 +66,13 @@ const HomeViewProcessSection = ({ theme, className, data = {}, ...props }) => {
 
             <ScrollAnimation config={animationConfig.opacity}>
               <div className='flex flex-col items-start justify-center'>
-                <Text.Subtitle className='mb-1 text-xl first-letter:uppercase lowercase'>
+                <Text.Subtitle className='mb-1 text-xl lowercase first-letter:uppercase'>
                   {data.title}
                 </Text.Subtitle>
 
-                <Text className='text-muted-content first-letter:uppercase'>{data.description}</Text>
+                <Text className='text-muted-content first-letter:uppercase'>
+                  {data.description}
+                </Text>
               </div>
             </ScrollAnimation>
 

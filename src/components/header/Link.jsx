@@ -16,7 +16,7 @@ const HeaderLink = ({ isActive, className, children, ...props }) => {
       )}
       {...props}
     >
-      <span className='first-letter:uppercase lowercase'>{children}</span>
+      <span className='lowercase first-letter:uppercase'>{children}</span>
 
       {isActive && (
         <motion.span

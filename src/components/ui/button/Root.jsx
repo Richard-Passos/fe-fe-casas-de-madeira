@@ -31,7 +31,7 @@ const buttonStyles = {
   };
 
 const buttonVariants = cnv({
-  base: 'inline-flex items-center justify-center gap-font-blank-space rounded-full border border-transparent font-medium transition-all active:scale-[.98] focus-visible:outline-variant disabled:pointer-events-none disabled:opacity-50',
+  base: 'inline-flex items-center justify-center gap-font-blank-space rounded-full border border-transparent font-medium transition-all focus-visible:outline-variant active:scale-[.98] disabled:pointer-events-none disabled:opacity-50',
   variants: {
     color: variantColors,
     style: buttonStyles,

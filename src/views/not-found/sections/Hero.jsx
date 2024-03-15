@@ -1,13 +1,13 @@
 import { Button, Link, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const NotFoundHeroSection = ({   data = {},className, ...props }) => {
+const NotFoundHeroSection = ({ data = {}, className, ...props }) => {
   const [backHomeAct = {}] = data?.actions ? data.actions : [];
 
   return (
     <section
       className={cn(
-        'flex min-h-svh -translate-y-[--header-h] w-9/10 max-w-screen-xl flex-col items-center justify-center pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))]',
+        'flex min-h-svh w-9/10 max-w-screen-xl -translate-y-[--header-h] flex-col items-center justify-center pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))]',
         className,
       )}
       {...props}
@@ -20,7 +20,7 @@ const NotFoundHeroSection = ({   data = {},className, ...props }) => {
         <h1>{data.title}</h1>
       </Text.Title>
 
-      <Text className='mb-4 text-center first-letter:uppercase text-2xl font-semibold'>
+      <Text className='mb-4 text-center text-2xl font-semibold first-letter:uppercase'>
         {data.subtitle}
       </Text>
 

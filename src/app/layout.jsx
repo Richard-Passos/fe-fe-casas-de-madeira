@@ -23,12 +23,9 @@ const Layout = ({ children }) => {
       >
         <Header />
 
-<ErrorBoundary.Provider>
-
-<ErrorBoundary>
-          {children}
-</ErrorBoundary>
-</ErrorBoundary.Provider>
+        <ErrorBoundary.Provider>
+          <ErrorBoundary>{children}</ErrorBoundary>
+        </ErrorBoundary.Provider>
 
         <Footer />
       </body>

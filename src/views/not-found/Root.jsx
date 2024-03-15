@@ -1,6 +1,6 @@
 import { capitalize } from '@/utils';
-import Sections from './sections';
 
+import Sections from './sections';
 
 const NotFoundView = ({ data = {} }) => {
   const { sections = [] } = data;

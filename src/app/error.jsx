@@ -2,6 +2,6 @@
 
 import { ErrorView } from '@/views';
 
-const ErrorPage = ErrorView
+const ErrorPage = ErrorView;
 
 export default ErrorPage;

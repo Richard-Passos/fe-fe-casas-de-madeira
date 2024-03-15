@@ -29,7 +29,9 @@ const ProjectViewHeroSection = ({ theme, className, data, ...props }) => {
             className='flex aspect-square w-full max-w-48 flex-col justify-end rounded-md bg-muted p-sm'
             key={data.title}
           >
-            <Text.Subtitle className='mb-1 first-letter:uppercase lowercase'>{data.title}</Text.Subtitle>
+            <Text.Subtitle className='mb-1 lowercase first-letter:uppercase'>
+              {data.title}
+            </Text.Subtitle>
 
             <Text className='text-sm font-medium text-muted-content first-letter:uppercase'>
               {data.description}

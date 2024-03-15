@@ -1,14 +1,15 @@
-'use client'
+'use client';
 
 import { useContext } from 'react';
-import Sections from './sections';
+
 import { ErrorContext } from '@/contexts';
 import { capitalize } from '@/utils';
 
-const ErrorView = ({ error, reset }) => {
+import Sections from './sections';
 
-  const {data} = useContext(ErrorContext)
-  
+const ErrorView = ({ error, reset }) => {
+  const { data } = useContext(ErrorContext);
+
   const { sections = [] } = data;
 
   return (

@@ -32,7 +32,7 @@ const HomeViewHeroSection = async ({
       {...props}
     >
       <div className='flex w-9/10 max-w-screen-xl flex-col max-sm:items-center lg:mt-xl'>
-        <Text className='font-medium max-sm:hidden sm:mb-lg sm:max-w-xl sm:text-2xl first-letter:uppercase'>
+        <Text className='font-medium first-letter:uppercase max-sm:hidden sm:mb-lg sm:max-w-xl sm:text-2xl'>
           {data.subtitle}
         </Text>
 
@@ -44,7 +44,7 @@ const HomeViewHeroSection = async ({
           <h1>{data.title}</h1>
         </Text.Title>
 
-        <Text className='mb-md max-sm:text-center first-letter:uppercase sm:max-w-xl sm:text-2xl/relaxed sm:font-medium'>
+        <Text className='mb-md first-letter:uppercase max-sm:text-center sm:max-w-xl sm:text-2xl/relaxed sm:font-medium'>
           {data.description}
         </Text>
 
@@ -73,7 +73,7 @@ const HomeViewHeroSection = async ({
           <nav className='flex h-fit flex-col items-start gap-2 justify-self-start'>
             {businessInfo.socials?.map((data) => (
               <Link
-                className='text-sm inline-block first-letter:uppercase lowercase'
+                className='inline-block text-sm lowercase first-letter:uppercase'
                 href={data.href}
                 key={data.href}
               >

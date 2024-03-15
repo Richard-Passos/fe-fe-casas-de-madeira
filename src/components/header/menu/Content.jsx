@@ -11,8 +11,8 @@ import Nav from './Nav';
 
 const HeaderMenuContent = async ({ className, ...props }) => {
   const { sections } = (await pagesApi.getOne('home', '&populate=sections'))
-    .data,
-     businessInfo = (
+      .data,
+    businessInfo = (
       await businessInfoApi.get('?populate=socials&populate=openingHours')
     ).data,
     contactInfo = (await businessInfoApi.getContact()).data;
@@ -56,7 +56,7 @@ const HeaderMenuContent = async ({ className, ...props }) => {
               </TextSubtitle>
 
               <Link
-                className='text-sm first-letter:uppercase lowercase'
+                className='text-sm lowercase first-letter:uppercase'
                 href={data.href}
               >
                 {data.description}

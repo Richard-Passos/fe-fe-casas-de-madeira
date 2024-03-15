@@ -5,9 +5,10 @@ import { useEffect } from 'react';
 import { Button, Link, Text } from '@/components/ui';
 import { cn } from '@/utils';
 
-const ErrorHeroSection = ({ data = {}, error, className,  reset, ...props }) => {
-  const [backHomeAct = {}, tryAgainAct = {}, ] = data?.actions ? data.actions : [];
-
+const ErrorHeroSection = ({ data = {}, error, className, reset, ...props }) => {
+  const [backHomeAct = {}, tryAgainAct = {}] = data?.actions
+    ? data.actions
+    : [];
 
   useEffect(() => {
     console.log(error);
@@ -16,7 +17,7 @@ const ErrorHeroSection = ({ data = {}, error, className,  reset, ...props }) => 
   return (
     <section
       className={cn(
-        'flex min-h-svh -translate-y-[--header-h] w-9/10 max-w-screen-xl flex-col items-center justify-center pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))]',
+        'flex min-h-svh w-9/10 max-w-screen-xl -translate-y-[--header-h] flex-col items-center justify-center pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))]',
         className,
       )}
       {...props}
@@ -29,7 +30,7 @@ const ErrorHeroSection = ({ data = {}, error, className,  reset, ...props }) => 
         <h1>{data.title}</h1>
       </Text.Title>
 
-      <Text className='mb-4 text-center first-letter:uppercase text-2xl font-semibold'>
+      <Text className='mb-4 text-center text-2xl font-semibold first-letter:uppercase'>
         {data.subtitle}
       </Text>
 
@@ -49,11 +50,15 @@ const ErrorHeroSection = ({ data = {}, error, className,  reset, ...props }) => 
             {backHomeAct.label}
           </Link>
         </Button>
-        
-        <Button onClick={() => {
-          console.log('reset')
-          reset()
-        }}>{tryAgainAct.label}</Button>
+
+        <Button
+          onClick={() => {
+            console.log('reset');
+            reset();
+          }}
+        >
+          {tryAgainAct.label}
+        </Button>
       </div>
 
       <span className='absolute top-0 h-px w-[calc(var(--w)*.95)] bg-border [--w:100vw] 2xl:[--w:--max-w]' />

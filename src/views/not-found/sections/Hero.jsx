@@ -7,7 +7,7 @@ const NotFoundHeroSection = ({ data = {}, className, ...props }) => {
   return (
     <section
       className={cn(
-        'flex min-h-svh w-9/10 max-w-screen-xl -translate-y-[--header-h] flex-col items-center justify-center pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))]',
+        'relative flex min-h-svh w-9/10 max-w-screen-xl -translate-y-[--header-h] flex-col items-center justify-center pb-lg pt-[calc(theme(spacing.lg)+var(--header-h))]',
         className,
       )}
       {...props}
@@ -37,7 +37,7 @@ const NotFoundHeroSection = ({ data = {}, className, ...props }) => {
         </Link>
       </Button>
 
-      <span className='absolute top-0 h-px w-[calc(var(--w)*.95)] bg-border [--w:100vw] 2xl:[--w:--max-w]' />
+      <span className='absolute top-[--header-h] h-px w-[calc(var(--w)*.95)] bg-border [--w:100vw] 2xl:[--w:--max-w]' />
     </section>
   );
 };

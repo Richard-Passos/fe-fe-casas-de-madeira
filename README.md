@@ -4,17 +4,12 @@
 
 ## :memo: Description
 
-This is the FE casas de madeira portfolio.
-
-The portfolio for a construction enterprise.
-
+Welcome to the portfolio of FE Casas de Madeira, where innovation meets craftsmanship in the construction of exceptional houses. As a full stack developer.
 <br>
 
 ## :wrench: Technologies used
 
 - Next.js
-- Jest.js
-- RadixUI
 - TailwindCSS
 - JavaScript
 

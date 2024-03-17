@@ -8,17 +8,21 @@ Welcome to the portfolio of FE casas de madeira, where innovation meets craftsma
 
 <br/>
 
+## :rocket: Run project
+
+https://fecasasdemadeira.com.br
+
+<br>
+
+## Features
+
+<br/>
+
 ## :wrench: Technologies used
 
 - Next.js
 - TailwindCSS
 - JavaScript
-
-<br>
-
-## :rocket: Run project
-
-https://fecasasdemadeira.com.br
 
 <br>
 

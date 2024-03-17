@@ -24,7 +24,7 @@ const ProjectViewHeroSection = ({ theme, className, data, ...props }) => {
       </Text>
 
       <ul className='grid grid-cols-2 gap-sm'>
-         {data.extras?.map((data) => (
+        {data.extras?.map((data) => (
           <li
             className='flex aspect-square w-full max-w-48 flex-col justify-end rounded-md bg-muted p-sm'
             key={data.title}

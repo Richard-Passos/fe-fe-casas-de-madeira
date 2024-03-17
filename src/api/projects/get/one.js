@@ -29,7 +29,7 @@ const _projectsApiGetOneNormalizeData = (data) => {
 
   if (images) images.data = images.data.map(apiNormImg);
 
-  return {...normalizedData, data: {...normalizedData.data, thumbnail}};
+  return { ...normalizedData, data: { ...normalizedData.data, thumbnail } };
 };
 
 export default projectsApiGetOne;

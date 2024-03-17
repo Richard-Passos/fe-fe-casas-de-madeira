@@ -16,7 +16,7 @@ Welcome to the portfolio of FE casas de madeira, where innovation meets craftsma
 
 ## 🛠️ Features
 
-Explore our site's functionalities:
+Explore website's functionalities:
 
 - `Home page`: Visitors can explore the latest projects, learn about the services offered, and discover the company's process.
 - `Project page`: Detailed descriptions and high-resolution images for each project.

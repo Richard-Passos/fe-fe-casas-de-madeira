@@ -19,7 +19,7 @@ Welcome to the portfolio of FE casas de madeira, where innovation meets craftsma
 ## :rocket: Run project
 
 
-<a href='https://fecasasdemadeira.com.br' target='_blank'>https://fecasasdemadeira.com.br</a>
+<a href='https://fecasasdemadeira.com.br' target="_blank">https://fecasasdemadeira.com.br</a>
 
 <br>
 

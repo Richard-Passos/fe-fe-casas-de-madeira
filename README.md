@@ -1,12 +1,12 @@
-# :file_cabinet: FE casas de madeira
+<h1 align="center">:file_cabinet: FE casas de madeira</h1>
 
 <br>
 
 ## :memo: Description
 
-Welcome to the portfolio of FE Casas de Madeira, where innovation meets craftsmanship in the construction of exceptional houses. As a full stack developer.
+Welcome to the portfolio of FE casas de madeira, where innovation meets craftsmanship in the construction of exceptional wooden houses
 
-<br>
+<br/>
 
 ## :wrench: Technologies used
 
@@ -18,9 +18,8 @@ Welcome to the portfolio of FE Casas de Madeira, where innovation meets craftsma
 
 ## :rocket: Run project
 
-```
-https://fecasasdemadeira.com.br
-```
+
+<a href='https://fecasasdemadeira.com.br' target='_blank'>https://fecasasdemadeira.com.br</a>
 
 <br>
 

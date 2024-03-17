@@ -2,8 +2,8 @@ import { projectsApi } from '@/api';
 import { ProjectView } from '@/views';
 
 const ProjectPage = ({ params: { id } }) => {
-  const data = projectsApi.getOne(id, '?populate=*'),
-    images = projectsApi.getOne(id, '?populate[images][populate][0]=data');
+  const data = projectsApi.getOne(id, '?populate=thumbnail&populate=extras'),
+    images = projectsApi.getOne(id, '?populate=images');
 
   return <ProjectView promises={{ data, images }} />;
 };

@@ -21,13 +21,15 @@ const projectsApiGetOne = async (id, pathname = '', opts = {}) => {
 };
 
 const _projectsApiGetOneNormalizeData = (data) => {
-  const normalizedData = apiNormData(data, ['extras']);
+  const normalizedData = apiNormData(data);
+
+  const thumbnail = apiNormImg(normalizedData.data.thumbnail?.data);
 
   const { images } = normalizedData.data;
 
   if (images) images.data = images.data.map(apiNormImg);
 
-  return normalizedData;
+  return {...normalizedData, data: {...normalizedData.data, thumbnail}};
 };
 
 export default projectsApiGetOne;

@@ -18,8 +18,8 @@ const Toast = ({ variants, className, ...props }, ref) => {
 };
 
 const toastStyles = {
-  solid: 'bg-main text-content',
-  outline: 'border-main text-main',
+  solid: 'bg-variant text-variant-content',
+  outline: 'border-variant text-variant',
 };
 
 const toastVariants = cnv({
@@ -29,7 +29,7 @@ const toastVariants = cnv({
     style: toastStyles,
   },
   defaultVariants: {
-    color: 'main',
+    color: 'primary',
     style: 'solid',
   },
 });

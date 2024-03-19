@@ -1,4 +1,5 @@
 export { default as Bg } from './bg';
+export { default as CookiesConsent } from './cookies-consent';
 export { default as Footer } from './footer';
 export { default as Header } from './header';
 export { default as Projects } from './projects';

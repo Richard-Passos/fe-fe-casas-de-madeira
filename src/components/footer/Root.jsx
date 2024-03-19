@@ -1,5 +1,4 @@
-import { businessInfoApi } from '@/api';
-import footerApi from '@/api/footer';
+import { businessInfoApi, footerApi } from '@/api';
 import { cn } from '@/utils';
 
 import Bg from '../bg';

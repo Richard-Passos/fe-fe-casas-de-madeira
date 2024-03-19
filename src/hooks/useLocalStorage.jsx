@@ -1,34 +1,32 @@
-'use client'
+'use client';
 
-const { useState } = require('react')
+const { useState } = require('react');
 
 const useLocalStorage = (key, initVal) => {
   const [data, setData] = useState(getLocalStorage(key) || initVal);
 
   const handleSetData = (val) => {
-    setLocalStorage(key, val)
+    setLocalStorage(key, val);
 
-    setData(val)
-  }
+    setData(val);
+  };
 
-  return [data, handleSetData]
-}
-
-const getLocalStorage = (key) => {
-  if(typeof window !== 'undefined') {
-    const data = localStorage.getItem(key)
-  
-  return JSON.parse(data)
-  }
-
-}, setLocalStorage = (key, val) => {
-  if(typeof window !== 'undefined') {
-
-  val = JSON.stringify(val)
-
-  return localStorage.setItem(key, val)
-  }
+  return [data, handleSetData];
 };
 
+const getLocalStorage = (key) => {
+    if (typeof window !== 'undefined') {
+      const data = localStorage.getItem(key);
 
-export default useLocalStorage
+      return JSON.parse(data);
+    }
+  },
+  setLocalStorage = (key, val) => {
+    if (typeof window !== 'undefined') {
+      val = JSON.stringify(val);
+
+      return localStorage.setItem(key, val);
+    }
+  };
+
+export default useLocalStorage;

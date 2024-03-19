@@ -1,3 +1,3 @@
-import CookiesConsent from './Root'
+import CookiesConsent from './Root';
 
-export default CookiesConsent
+export default CookiesConsent;

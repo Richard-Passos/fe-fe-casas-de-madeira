@@ -3,9 +3,9 @@ import { Inter } from 'next/font/google';
 import { businessInfoApi } from '@/api';
 import { CookiesConsent, Footer, Header } from '@/components';
 import { ErrorBoundary } from '@/components/ui';
+import { ToastProvider, ToastViewport } from '@/components/ui/toast';
 import '@/styles/globals.css';
 import { cn } from '@/utils';
-import { ToastProvider, ToastViewport } from '@/components/ui/toast';
 
 const font = Inter({ subsets: ['latin'], variable: '--font-app' });
 
@@ -23,18 +23,16 @@ const Layout = ({ children }) => {
         id='top'
       >
         <ToastProvider>
-        <Header />
+          <Header />
 
-<ErrorBoundary.Provider>
-  <ErrorBoundary>{children}</ErrorBoundary>
-</ErrorBoundary.Provider>
+          <ErrorBoundary.Provider>
+            <ErrorBoundary>{children}</ErrorBoundary>
+          </ErrorBoundary.Provider>
 
-<Footer />
+          <Footer />
 
-
-<CookiesConsent/>
-<ToastViewport />
-
+          <CookiesConsent />
+          <ToastViewport />
         </ToastProvider>
       </body>
     </html>

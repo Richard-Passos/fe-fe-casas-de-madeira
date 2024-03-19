@@ -5,6 +5,4 @@ const toastsApiGet = {
 };
 
 export default toastsApiGet;
-export {
-  toastsApiGetRoot as toastsApiGet,
-};
+export { toastsApiGetRoot as toastsApiGet };

@@ -4,7 +4,6 @@ const projectsApiGetOne = async (id, pathname = '', opts = {}) => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BACK_END_BASE_URL}/api/projects/${id}${pathname}`,
     {
-      cache: 'no-store',
       ...opts,
       headers: {
         Authorization: `Bearer ${process.env.STRAPI_API_KEY}`,

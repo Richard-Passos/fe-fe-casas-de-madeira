@@ -12,7 +12,7 @@ const HomeViewWorkSection = async ({
   ...props
 }) => {
   const projects = (await projectsApi.getSelecteds('&populate=thumbnail')).data,
-    businessInfo = (await businessInfoApi.get()).data;
+    businessInfo = (await businessInfoApi.get('?populate=phones')).data;
 
   const [seeMoreAct = {}, contactAct = {}] = data?.actions;
 
@@ -46,19 +46,20 @@ const HomeViewWorkSection = async ({
       </header>
 
       <Projects>
-        {projects?.slice(0, projects.length - 1).map(({ id, data }, i, arr) => (
+
+      
+        {projects?.map(({ id, data }) => (
           <Projects.Item
-            className={cn(i === arr.length - 1 && 'md:order-2 md:!mt-0')}
             key={`Project ${id}`}
           >
             <Projects.Link
               className='bg-main'
-              href={data.href}
-            >
+              href={`https://wa.me/${businessInfo.phones?.[0]?.description?.replace(/\D/g, '')}`}
+              >
               <Projects.Image {...data.thumbnail?.data} />
 
               <Projects.Action asChild>
-                <Button>{seeMoreAct.label}</Button>
+              <Button>{contactAct.label}</Button>
               </Projects.Action>
             </Projects.Link>
 
@@ -67,30 +68,8 @@ const HomeViewWorkSection = async ({
             <Projects.Description>{data.summary}</Projects.Description>
           </Projects.Item>
         ))}
-
-        <Projects.Item className='md:order-1 md:mt-lg'>
-          <Projects.Link
-            className='bg-main text-main focus-visible:outline-content'
-            href={`https://wa.me/${businessInfo.phone.replace(/\D/g, '')}`}
-          >
-            <Projects.Image
-              className='grayscale'
-              {...lastItem.thumbnail?.data}
-            />
-
-            <PlusIcon className='absolute aspect-square h-auto w-1/6' />
-
-            <Projects.Action asChild>
-              <Button>{contactAct.label}</Button>
-            </Projects.Action>
-          </Projects.Link>
-
-          <Projects.Title>{lastItem.title}</Projects.Title>
-
-          <Projects.Description>{lastItem.description}</Projects.Description>
-        </Projects.Item>
-      </Projects>
-
+</Projects>
+ 
       <Bg className='bg-muted' />
     </section>
   );

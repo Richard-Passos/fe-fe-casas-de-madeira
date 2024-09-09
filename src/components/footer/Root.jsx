@@ -8,7 +8,7 @@ const Footer = async ({ className, ...props }) => {
   const businessInfo = (
       await businessInfoApi.get('?populate=socials&populate=openingHours')
     ).data,
-    contactInfo = (await businessInfoApi.getContact()).data,
+    contactInfo = (await businessInfoApi.getContact('?populate=phones')).data,
     data = (await footerApi.get('?populate=*')).data || {};
 
   const [backTopAct = {}] = data.actions;

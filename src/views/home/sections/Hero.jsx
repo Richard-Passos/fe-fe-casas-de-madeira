@@ -10,8 +10,8 @@ const HomeViewHeroSection = async ({
   data = {},
   ...props
 }) => {
-  const businessInfo = (await businessInfoApi.get(`?populate=socials`)).data,
-    contactInfo = (await businessInfoApi.getContact()).data;
+  const businessInfo = (await businessInfoApi.get(`?populate=socials&populate=phones`)).data,
+    contactInfo = (await businessInfoApi.getContact('?populate=phones')).data;
 
   const [contactAct] = data?.actions || [];
 
@@ -32,26 +32,26 @@ const HomeViewHeroSection = async ({
       {...props}
     >
       <div className='flex w-9/10 max-w-screen-xl flex-col max-sm:items-center lg:mt-xl'>
-        <Text className='font-medium first-letter:uppercase max-sm:hidden sm:mb-lg sm:max-w-xl sm:text-2xl'>
+        <Text className='font-medium first-letter:uppercase max-sm:hidden sm:mb-sm sm:max-w-xl sm:text-2xl'>
           {data.subtitle}
         </Text>
 
         <Text.Title
           asChild
-          className='mb-sm max-sm:text-center sm:mb-lg'
+          className='mb-sm sm:mb-md max-sm:text-center'
           variants={{ size: 'xl' }}
         >
           <h1>{data.title}</h1>
         </Text.Title>
 
-        <Text className='mb-md first-letter:uppercase max-sm:text-center sm:max-w-xl sm:text-2xl/relaxed sm:font-medium'>
+        <Text className='mb-md first-letter:uppercase max-sm:text-center sm:max-w-2xl sm:text-xl/relaxed sm:font-medium'>
           {data.description}
         </Text>
 
         <Button className='sm:hidden'>
           <Link
             className='hover:no-underline'
-            href={`https://wa.me/${businessInfo.phone.replace(/\D/g, '')}`}
+            href={`https://wa.me/${businessInfo.phones?.[0]?.description?.replace(/\D/g, '')}`}
           >
             {contactAct.label}
           </Link>

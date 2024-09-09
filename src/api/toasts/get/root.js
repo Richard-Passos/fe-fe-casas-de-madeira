@@ -2,12 +2,12 @@ import { apiNormData } from '@/api/utils';
 
 const toastsApiGet = async (pathname = '', opts = {}) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACK_END_BASE_URL}/api/toast${pathname}`,
+    `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/toast${pathname}`,
     {
       cache: 'no-store',
       ...opts,
       headers: {
-        Authorization: `Bearer ${process.env.STRAPI_API_KEY}`,
+        Authorization: `Bearer ${process.env.CMS_API_KEY}`,
         ...opts.headers,
       },
     },

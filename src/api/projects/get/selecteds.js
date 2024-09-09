@@ -2,12 +2,12 @@ import { apiNormArr, apiNormImg } from '@/api/utils';
 
 const projectsApiGetSelecteds = async (pathname = '', opts = {}) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACK_END_BASE_URL}/api/projects?filters[isSelected][$eq]=true${pathname}`,
+    `${process.env.NEXT_PUBLIC_CMS_BASE_URL}/api/projects?filters[isSelected][$eq]=true${pathname}`,
     {
       cache: 'no-store',
       ...opts,
       headers: {
-        Authorization: `Bearer ${process.env.STRAPI_API_KEY}`,
+        Authorization: `Bearer ${process.env.CMS_API_KEY}`,
         ...opts.headers,
       },
     },

@@ -6,7 +6,7 @@ const apiNormImg = (data) => {
 
     const normalizedData = {
       alt: attributes.alternativeText,
-      src: `${process.env.NEXT_PUBLIC_BACK_END_BASE_URL}${img.url}`,
+      src: `${process.env.NEXT_PUBLIC_CMS_BASE_URL}${img.url}`,
       width: img.width ?? img.size,
       height: img.height ?? img.size,
     };

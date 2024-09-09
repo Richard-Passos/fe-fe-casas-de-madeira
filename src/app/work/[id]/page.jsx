@@ -1,7 +1,10 @@
 import { projectsApi } from '@/api';
 import { ProjectView } from '@/views';
+import { notFound } from 'next/navigation';
 
 const ProjectPage = ({ params: { id } }) => {
+  return notFound()
+
   const data = projectsApi.getOne(id, '?populate=thumbnail&populate=extras'),
     images = projectsApi.getOne(id, '?populate=images');
 
@@ -9,6 +12,8 @@ const ProjectPage = ({ params: { id } }) => {
 };
 
 const generateMetadata = async ({ params }) => {
+  return notFound()
+
   const { id } = params;
 
   const data = (await projectsApi.getOne(id)).data;
@@ -30,4 +35,4 @@ const generateStaticParams = async () => {
 };
 
 export default ProjectPage;
-export { generateMetadata, generateStaticParams };
+export { generateMetadata };

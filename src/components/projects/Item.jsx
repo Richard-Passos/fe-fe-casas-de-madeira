@@ -8,7 +8,7 @@ const ProjectsItem = ({ asChild, className, ...props }) => {
   return (
     <Tag
       className={cn(
-        'flex flex-col items-center gap-2 sm:max-md:even:mt-lg sm:max-md:[&:not(:last-child)]:even:-mb-lg md:[&:nth-child(3n+2)]:-mb-lg md:[&:nth-child(3n+2)]:mt-lg md:[&:nth-last-child(2)]:mb-0',
+        'flex flex-col items-center gap-2 h-fit sm:even:mt-lg sm:[&:not(:last-child)]:even:-mb-lg',
         className,
       )}
       {...props}

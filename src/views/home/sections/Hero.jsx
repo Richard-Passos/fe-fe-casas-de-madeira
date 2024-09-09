@@ -25,7 +25,7 @@ const HomeViewHeroSection = async ({
   return (
     <section
       className={cn(
-        'relative -mt-[--header-h] flex w-full items-center justify-center pb-lg pt-[calc(var(--header-h)+theme(spacing.lg))] max-2xl:min-h-svh',
+        'relative -mt-[--header-h] flex w-full items-center justify-center pb-lg pt-[calc(var(--header-h)+theme(spacing.xl)*1.5)] max-2xl:min-h-svh',
         theme,
         className,
       )}

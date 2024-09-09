@@ -1,19 +1,18 @@
-import { businessInfoApi } from '@/api/';
 import { Image, Link } from '@/components/ui';
+import LogoImage from '../../../../public/images/logo.webp';
 import { cn } from '@/utils';
 
 const Root = async ({ className, ...props }) => {
-  const logo = (await businessInfoApi.get('?populate=logo')).data?.logo;
-
   return (
     <Link
-      className={cn('h-10 rounded-sm', className)}
+      className={cn('h-14 rounded-sm overflow-hidden', className)}
       href='/'
       {...props}
     >
       <Image
         className='size-full object-cover'
-        {...logo?.data}
+        src={LogoImage}
+        alt='Logo'
       />
     </Link>
   );

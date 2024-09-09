@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
     >
       <body
         className={cn(
-          'light relative flex min-h-svh flex-col items-center overflow-x-clip bg-main font-app [--header-h:calc(theme(spacing.sm)*2+theme(spacing.10))]',
+          'light relative flex min-h-svh flex-col items-center overflow-x-clip bg-main font-app [--header-h:calc(theme(spacing.sm)*2+theme(spacing.14))]',
           font.variable,
         )}
         id='top'
@@ -47,7 +47,6 @@ const generateMetadata = async () => {
       default: `${data.name}`,
       template: `${data.name} - %s`,
     },
-    icons: data.logo?.data.src,
     description: data.summary,
     openGraph: {
       title: {

@@ -88,7 +88,7 @@ module.exports = {
         inherit: 'inherit',
       },
       outlineColor: {
-        DEFAULT: 'currentColor',
+        DEFAULT: getColor('--primary'),
       },
       outlineOffset: {
         DEFAULT: '2',

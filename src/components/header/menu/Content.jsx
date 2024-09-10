@@ -15,7 +15,7 @@ const HeaderMenuContent = async ({ className, ...props }) => {
     businessInfo = (
       await businessInfoApi.get('?populate=socials&populate=openingHours')
     ).data,
-    contactInfo = (await businessInfoApi.getContact()).data;
+    contactInfo = (await businessInfoApi.getContact('?populate=phones')).data;
 
   const navItems = sections
     ?.map(({ name }) => HEADER_SECTIONS_PT[name.toLowerCase()])

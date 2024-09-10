@@ -47,11 +47,11 @@ const generateMetadata = async () => {
       default: `${data.name}`,
       template: `${data.name} - %s`,
     },
-     icons: {
-      icon: './favicon.ico',
-      apple: './apple-touch-icon.png',
+    icons: {
+      icon: '/images/favicon.ico',
+      apple: '/images/apple-touch-icon.png'
     },
-    manifest: './manifest.json',
+    manifest: '/images/manifest.json',
     description: data.summary,
     openGraph: {
       title: {

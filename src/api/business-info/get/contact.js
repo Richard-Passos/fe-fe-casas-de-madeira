@@ -19,7 +19,7 @@ const businessInfoApiGetContact = async (pathname = '', opts = {}) => {
   
   const data = [
     {
-      href: `malto:${email}`,
+      href: `mailto:${email}`,
       title: 'Email',
       description: email,
     },
